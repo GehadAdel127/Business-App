@@ -7,6 +7,7 @@ import { useCart } from './Context/CartProvider';
 
 const Cart = () => {
   const { cart, addToCart, removeFromCart } = useCart();
+
   const calculateTotalPrice = () => {
     return cart.reduce((total, item) => {
       const price = isNaN(item.price) ? 0 : item.price;
@@ -14,14 +15,17 @@ const Cart = () => {
       return total + price * quantity;
     }, 0);
   };
+  
   const calculateSubtotal = (price, quantity) => {
     const validPrice = isNaN(price) ? 0 : price;
     const validQuantity = isNaN(quantity) ? 0 : quantity;
     return validPrice * validQuantity;
   };
+  
   const handleIncreaseQuantity = (item) => {
     addToCart(item, 1);
   };
+  
   const handleDecreaseQuantity = (item) => {
     if (item.quantity > 1) {
       addToCart(item, -1);

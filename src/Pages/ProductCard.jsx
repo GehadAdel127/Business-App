@@ -10,7 +10,7 @@ const ProductCard = ({ product, toggleWishlist, isInWishlist, addToCart }) => {
 
     const handleFavoriteClick = (e) => {
         e.preventDefault();
-        toggleWishlist(product); // ✅ Removed navigation to wishlist
+        toggleWishlist(product);
     };
 
     return (

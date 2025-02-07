@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 import HelloImage from '../Components/HelloImage';
 import Pagination from '../Components/Pagination';
@@ -31,6 +30,10 @@ const Projects = () => {
     const indexOfFirstSlide = indexOfLastSlide - slidesPerPage;
     const currentSlides = slides.slice(indexOfFirstSlide, indexOfLastSlide);
     const totalPages = Math.ceil(slides.length / slidesPerPage);
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(slides.length / slidesPerPage); i++) {
+        pageNumbers.push(i);
+    }
 
     return (
         <div className='projectsPage'>
@@ -39,12 +42,7 @@ const Projects = () => {
                 {currentSlides.map((slide) => (
                     <Link to={`/projects/${slide.id}`} key={slide.id}>
                         <div className="projectsSlide">
-                            <LazyLoadImage
-                                src={slide.img}
-                                alt={slide.title}
-                                effect="blur"
-                                className="lazy-image"
-                            />
+                            <img src={slide.img} alt={slide.title} />
                             <div className="projectsSliderContent">
                                 <h2>{slide.title}</h2>
                                 <span className="material-icons-outlined">view_in_ar</span>

@@ -140,6 +140,11 @@ th {
     width: 46%;
     margin: 0;
 }
+@media screen and (max-width : 1200px){
+    .productCard h3{
+        font-size: 14px;
+    }
+}
 @media screen and (max-width : 780px){
     .totalAndInterested{
         flex-direction: column;
