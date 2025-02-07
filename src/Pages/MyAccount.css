@@ -1,0 +1,107 @@
+.myAccount {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background: #f5f5f5;
+    width: 90%;
+    margin: 50px 0px;
+    padding: 50px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+.container form {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+.container form > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: calc(100% - 25px);
+}
+.passwordContainer {
+    position: relative;
+    width: 100%;
+}
+.myAccount input{
+    padding: 15px;
+    border-radius: 50px;
+}
+.myAccount input:focus{
+    border: 1px solid var(--secondColor);
+}
+.myAccount span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+}
+.myAccount span:hover {
+    color: #969393;
+}
+.rememberMe {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: start;
+    flex-direction: row !important;
+    gap: 8px;
+}
+.rememberMe input{
+    width: auto !important;
+}
+.rememberMe p {
+    margin: 0;
+}
+.lostPassword {
+    color: #969393;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: all 0.4s ease;
+}
+.lostPassword:hover {
+    color: var(--secondColor);
+}
+.myAccount .btn{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.myAccount .btn button{
+    padding: 15px 40px;
+}
+@media screen and (max-width : 780px) {
+    .myAccount .container{
+        flex-direction: column;
+        padding: 20px;
+    }
+    .myAccount .container form{
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        margin-bottom: 30px;
+        gap: 15px;
+    }
+    .myAccount form h3{
+        font-size: 16px;
+    }
+    label , .lostPassword , .rememberMe p , .myAccount .container form p{
+        font-size: 10px;
+    }
+    .myAccount input{
+        padding: 10px;
+    }
+}

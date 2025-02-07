@@ -1,0 +1,127 @@
+.aboutCompany{
+    padding: 90px 20px 90px 90px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.home .aboutCompany{
+    flex-direction: row-reverse;
+}
+.home .aboutCompany .rightSide img{
+    margin-top: 100px;
+}
+.services .aboutCompany{
+    padding-bottom: 0;
+    border-bottom: 1px solid rgb(236, 236, 236);
+}
+.services .aboutCompany .lists{
+    padding-bottom: 0;
+}
+.aboutCompany .rightSide{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    padding: 0px !important;
+}
+.rightSide img{
+    max-width: 100%;
+}
+.aboutCompany .leftSide{
+    width: 50%;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.heading img{
+    width: 100px;
+}
+.lists{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px;
+    gap: 30px;
+}
+.aboutCompany h2{
+    font-size: 48px;
+}
+.list{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.list span{
+    display: inline;
+    font-size: 80px !important;
+    color: #55c48b;
+    font-weight: 300 !important;
+    transition: 0.4s ease-in-out;
+}
+.list:hover span{
+    color: #01849f;
+    transform: scale(1.09);
+}
+.list .content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: normal;
+    width: 50%;
+}
+.aboutCompany .content h3{
+    font-size: 22px;
+}
+.aboutCompany .content p{
+    color: #9c9c9c;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 2;
+}
+@media screen and (max-width : 1200px) {
+    .aboutCompany{
+        flex-direction: column-reverse !important;
+        padding: 50px;
+    }
+    .aboutCompany .leftSide {
+        width: 100%;
+    }
+    .aboutCompany .rightSide{
+        width: 70%;
+    }
+    .home .aboutCompany .rightSide img{
+        margin-top: 0px;
+    }
+    .list{
+        justify-content: center;
+    }
+}
+@media screen and (max-width : 780px){
+    .aboutCompany{
+        padding: 20px;
+    }
+    .lists{
+        gap: 10px;
+        padding: 20px 0;
+    }
+    .lists .list{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .list .content{
+        align-items: center;
+        text-align: center;
+        width: 80%;
+    }
+    .home .aboutCompany .rightSide img{
+        margin-top: 0px;
+    }
+    .leftSide{
+        text-align: center;
+    }
+    .rightSideIcon, .heading {
+        justify-content: center;
+        align-items: center;
+    }
+}

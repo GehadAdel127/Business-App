@@ -1,0 +1,195 @@
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+footer > .content{
+    padding: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 50px;
+    background: #79d7be31;
+    width: 100%;
+}
+.left{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 50px;
+    width: 40%;
+    text-align: start;
+}
+.left .logo{
+    gap: 30px;
+}
+footer .content p{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--linksColor);
+    line-height: 30px;
+}
+footer .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+footer .icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--secondColor);
+    color: white;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+}
+footer .icons svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+footer .icons a:nth-child(1):hover{
+    background: #1877F2 !important;
+}
+footer .icons a:nth-child(2):hover{
+    background: #1DA1F2 !important;
+}
+footer .icons a:nth-child(3):hover{
+    background: #0077B5  !important;
+}
+footer .icons a:nth-child(4):hover{
+    background-image: radial-gradient(circle farthest-corner at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%) !important;
+}
+footer .icons a:nth-child(5):hover{
+    background: #FF0000  !important;
+}
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 30px;
+    width: 50%;
+}
+.right > div{
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .right h3{
+    color: var(--linksColor);
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: start;
+}
+.right .links{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    width: 100%;
+}
+.right .links a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--linksColor);
+    transition: all 0.4s ease;
+}
+.right .links a span{
+    color: var(--secondColor);
+}
+hr{
+    min-width: 60%;
+    max-width: 100%;
+    height: 1px;
+    background: rgba(128, 128, 128, 0.164);
+    position: relative;
+    overflow: visible;
+}
+.right hr::before{
+    content: '';
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primaryColor);
+}
+ul a li{
+    color: var(--linksColor);
+    transition: all 0.4s ease;
+    width: 100% !important;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+ul a li:hover{
+    color: var(--secondColor) !important;
+}
+.right .links a:hover{
+    transform: translateX(10px);
+}
+.copyRight{
+    background: var(--primaryColor);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+@media screen and (max-width : 1200px) {
+    footer > .content{
+        padding: 50px 20px;
+        flex-direction: column;
+    }
+    footer .content .left , footer .content .right{
+        width: 100%;
+    }
+    footer .left{
+        gap: 15px;
+    }
+    footer .right > div{
+        width: 100%;
+    }
+    footer .icons{
+        gap: 10px;
+    }
+}
+@media screen and (max-width : 780px) {
+    footer > .content .right , footer > .content .left{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    footer > .content p , ul a li , footer .right h3{
+        font-size: 12px;
+    }
+    footer .right > div , footer .right > div .links{
+        justify-content: center;
+        align-items: center;
+    }
+    footer .icons{
+        gap: 5px;
+    }
+    footer .icons a{
+        width: 40px;
+        height: 40px;
+    }
+    footer .copyRight p{
+        font-size: 12px;
+    }
+}

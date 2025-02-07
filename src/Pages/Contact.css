@@ -1,0 +1,133 @@
+.contactForm{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: 100px 20px;
+}
+.contactLeftSide , .contactRightSide{
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+}
+.contactLeftSide{
+    background-image: url('../Images/Frame\ 5.png');
+    object-fit: cover;
+    background-size: cover;
+    padding: 70px;
+    box-shadow: 5px 5px 15px #387f3942;
+    border-radius: 5px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+label{
+    color: #333;
+}
+input , textarea{
+    border: 1px solid #bebebe;
+    border-radius: 30px;
+    padding: 15px;
+    width: 100%;
+    background: #fff;
+}
+textarea{
+    height: 150px;
+    resize: vertical;
+}
+.contactLeftSide h3 , .contactRightSide h3{
+    font-size: 34px;
+    font-weight: 600;
+    color: #000;
+    padding: 20px 0px;
+}
+.contactRightSide h3{
+    color: #000;
+}
+.contactRightSide{
+    padding: 0px 10px;
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 70px;
+}
+.contactIcon{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+.contactIcon svg{
+    color: #fff;
+    font-size: 20px;
+    padding: 20px;
+    width: 20px;
+    background: var(--secondColor);
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+    border: 1px solid transparent;
+}
+.contactIcon svg:hover{
+    background: var(--primaryColor);
+    color: #fff;
+    transform: scale(1.2);
+}
+.contactContent{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+.contactContent p{
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--secondColor);
+}
+.contactContent h3{
+    font-size: 24px;
+    color: #000;
+    padding: 0px;
+}
+.contactLeftSide .btn button{
+    box-shadow: none;
+    padding: 10px 25px;
+    font-size: 14px;
+    font-weight: 500;
+}
+@media screen and (max-width : 780px) {
+    .contactForm{
+        flex-direction: column;
+    }
+    .contactLeftSide , .contactRightSide{
+        width: 90%;
+        padding: 20px;
+    }
+    .contactRightSide{
+        gap: 20px;
+    }
+    .contactLeftSide label{
+        width: 100%;
+    }
+    .contactRightSide h3{
+        font-size: 26px;
+    }
+    .contactIcon svg{
+        width: 25px;
+        height: 25px;
+        font-size: 30px;
+        padding: 15px;
+    }
+    .contactContent p{
+        font-size: 14px;
+    }
+    .contactContent h3{
+        font-size: 18px;
+    }
+}

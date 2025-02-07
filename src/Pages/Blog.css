@@ -1,0 +1,228 @@
+.blogContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: row-reverse;
+    padding: 70px;
+    width: 100%;
+    gap: 30px;
+}
+.blogLeftSide{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+.blogRightSide{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+.search , .tags{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background: #f0f0f0a6;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    gap: 25px;
+}
+.search input{
+    width: 80%;
+    padding: 10px;
+}
+.search .btn{
+    width: 20%;
+}
+.search .btn button{
+    font-size: 12px;
+    font-weight: 500;
+    padding: 12px 30px;
+}
+.tags{
+    flex-direction: column;
+    padding: 5px 0px;
+    gap: 5px;
+}
+.tags .head{
+    border-bottom: 1px solid #ddd;
+}
+.tags .head h2{
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primaryColor);
+}
+.tagList{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+.tagList span{
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    text-transform: lowercase;
+    cursor: pointer;
+    transition: background 0.3s ease , border 0.4s ease , color 0.1s ease;
+}
+.tagList span:hover{
+    background: var(--btnColors);
+    color: #fff;
+    border: 1px solid var(--secondColor);
+}
+.blogCard{
+    background: #f0f0f0a6;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+    width: 90%;
+    padding-bottom: 20px;
+    padding-right: 40px;
+    position: relative;
+    height: auto;
+    margin: 0 auto;
+}
+.blogCard > img{
+    border-radius: 5px;
+    object-fit: fill;
+    position: relative;
+    top: -30px;
+    right: -20px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: block;
+}
+.blogCard > img:hover{
+    filter: brightness(50%);
+}
+.blogContent h2{
+    font-size: 22px;
+    color: #2b2a2a;
+    width: 100%;
+    border-left: 3px solid var(--secondColor);
+    padding: 5px 30px;
+}
+.writer{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 30px;
+}
+.writer img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.nameTime{
+    font-size: 12px;
+    color: #2b2a2a;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.nameTime span{
+    color: var(--primaryColor);
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+.nameTime p{
+    padding: 0 !important;
+}
+.blogContent p{
+    padding: 5px 30px 10px;
+    color: #474747;
+    line-height: 1.6;
+    font-weight: 600;
+}
+.blogCard .btn{
+    justify-content: start;
+    padding-left: 30px;
+}
+.blogCard .readMore{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+@media screen and (max-width : 1200px) {
+    .blogContainer{
+        flex-direction: column-reverse;
+    }
+    .blogRightSide{
+        width: 85%;
+        padding-left: 40px;
+    }
+    .blogLeftSide{
+        width: 90%;
+    }
+}
+@media screen and (max-width : 780px){
+    .blogContainer{
+        padding: 20px;
+        padding-top: 70px;
+    }
+    .blogLeftSide{
+        width: 100%;
+    }
+    .blogRightSide{
+        width: 98%;
+        padding-left: 10px;
+    }
+    .blogCard{
+        gap: 0px;
+    }
+    .blogContent h2{
+        font-size: 12px;
+    }
+    .nameTime{
+        width: 100%;
+    }
+    .nameTime p{
+        padding: 0px;
+    }
+    .blogContent p{
+        font-size: 10px;
+    }
+    .pagination button{
+        width: 40px !important;
+        height: 40px !important;
+    }
+    .blogCard .readMore{
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+    .search input{
+        width: 60%;
+    }
+    .search{
+        gap: 10px;
+    }
+    .search .btn{
+        width: 40%;
+        justify-content: end;
+    }
+}

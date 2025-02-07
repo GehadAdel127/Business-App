@@ -1,0 +1,110 @@
+.packages{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 100px 50px;
+}
+.firstPackages img{
+    margin: 0 auto;
+}
+.packages img{
+    width: 70px;
+    height: 70px;
+}
+.firstPackages .subCards .card{
+    align-items: start !important;
+}
+.firstPackages .subCards .card img{
+    margin: 0px;
+}
+.packages > h2{
+    text-align: center !important;
+    margin-bottom: 50px;
+    font-size: 40px;
+}
+.packages .subCards .card h2{
+    text-align: start !important;
+}
+.packages .subCards .card p{
+    text-align: start;
+}
+.packages h5{
+    text-align: center;
+    color: var(--primaryColor);
+    letter-spacing: 10px;
+    font-weight: 400;
+}
+.careMessage{
+    padding: 90px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center !important;
+    flex-direction: column;
+    background: var(--btnColors);
+    color: #fff;
+    gap: 20px;
+    border-radius: 10px;
+    width: 85%;
+    margin: 0 auto;
+}
+.careMessage h2{
+    text-align: center;
+    font-size: 40px;
+}
+.businessPackages .card{
+    align-items: center !important;
+    padding: 50px 20px !important;
+    height: 400px;
+    text-align: center;
+    background: #f3f3f388;
+}
+.businessPackages img{
+    margin: 0 auto;
+}
+.packages .card h1{
+    font-size: 50px;
+    color: #d3d0d0;
+}
+.packages .card h3{
+    transition: all 0.4s ease;
+}
+.packages .card p{
+    color: #bebdbd;
+}
+.packages .card:hover h3 , .packages .card.active{
+    color: var(--secondColor);
+}
+.packages .card:hover , .packages .card.active{
+    border: 1px solid var(--secondColor);
+    transform: translateY(-20px);
+}
+.packages .card button{
+    background: var(--btnColors);
+    padding: 10px 30px;
+    font-size: 14px !important;
+    text-align: center;
+}
+.packages .card button::after{
+    content: 'Good Choice';
+}
+@media screen and (max-width : 1200px) {
+    .packages .subCards{
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+        gap: 10px;
+    }
+    .careMessage{
+        padding: 50px 30px;
+    }
+    .services .aboutCompany{
+        border-bottom: none;
+    }
+}
+@media screen and (max-width : 780px){
+    .packages .subCards{
+        grid-template-columns: 1fr;
+    }
+}

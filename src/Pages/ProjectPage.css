@@ -1,0 +1,144 @@
+.projectPageContent{
+    flex-direction: column;
+    padding: 20px;
+    gap: 50px;
+}
+.projectPageContent , .top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.top{
+    justify-content: space-between !important;
+    gap: 30px;
+    height: 100%;
+}
+.projectPageContent .top .right{
+    width: 50%;
+    height: 500px;
+}
+.projectPageContent .top .right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.projectPageContent .top .left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.projectPageContent .top .left p{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 2;
+}
+.detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+.projectPageContent .detail h5{
+    font-size: 16px;
+    font-weight: 300;
+}
+.projectPageContent .detail p{
+    font-weight: 600 !important;
+    color: var(--primaryColor);
+}
+.projectPageContent .top .left .btn , .projectPageContent .top .left button{
+    width: 100%;
+}
+.projectLinks{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #f3f2f2bd;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}.projectLinks svg {
+    cursor: pointer;
+    font-size: 25px;
+    color: #bdbbbb;
+    position: relative;
+}
+.iconWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.iconWrapper::before {
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: -50px;
+    left: 20px;
+    transform: translateY(50px);
+    background: var(--primaryColor);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.4s;
+}
+.iconWrapper:nth-child(1)::before {
+    content: "Share on facebook";
+}
+.iconWrapper:nth-child(2)::before {
+    content: "Share on instagram";
+}
+.iconWrapper:nth-child(3)::before {
+    content: "Share on pinterest";
+}
+.iconWrapper:nth-child(4)::before {
+    content: "Share on linkedin";
+}
+.iconWrapper:nth-child(5)::before {
+    content: "Share on whatsapp";
+}
+.iconWrapper:nth-child(6)::before {
+    content: "Share on telegram";
+}
+.iconWrapper:hover::before {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media screen and (max-width : 1200px){
+    .iconWrapper::before{
+        font-size: 10px;
+        left: 10px;
+    }
+}
+@media screen and (max-width : 780px){
+    .iconWrapper::before{
+        font-size: 10px;
+        left: -15px;
+    }
+    .projectPageContent .top{
+        flex-direction: column;
+    }
+    .projectPageContent .top .right , .projectPageContent .top .left{
+        width: 100%;
+    }
+    .productCards{
+        gap: 30px 10px !important;
+    }
+}

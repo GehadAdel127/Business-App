@@ -1,0 +1,345 @@
+.aboutContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+}
+.aboutContent .topRight{
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    flex-direction: column;
+}
+.topRight h5 , .projects h5{
+    color: var(--primaryColor);
+}
+.topRight h2 , .projects h2{
+    font-size: 44px;
+}
+.topRight p{
+    color: #63636371;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 2;
+}
+.count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+}
+.count > div{
+    text-align: center;
+    color: var(--primaryColor);
+}
+.oval{
+    padding: 16px 10px;
+    width: 150px;
+    background: var(--secondColor);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.topRight img{
+    width: 100px;
+}
+.aboutContent .topLeft{
+    width: 50%;
+    height: 100%;
+}
+.topLeft img{
+    width: 100%;
+    height: 100%;
+}
+.projects{
+    background: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+.projects h2{
+    text-align: center !important;
+}
+.projects h4{
+    color: var(--secondColor);
+    font-size: 22px;
+    font-weight: 500;
+}
+.projects img{
+    width: 70px;
+    height: 70px;
+    margin-top: 100px;
+}
+.aboutCard{
+    display: flex;
+    gap: 20px;
+    padding: 50px;
+}
+.aboutCard .card{
+    display: flex;
+    box-shadow: none;
+    padding: 0px;
+    justify-content: start;
+    align-items: start;
+    flex-direction: row;
+    gap: 30px;
+    text-align: start;
+    border: none;
+}
+.aboutCard .card img{
+    width: 70px;
+    height: 70px;
+    margin-top: 0;
+}
+.aboutCard .card .content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px !important;
+}
+.aboutCard h2 , .newProject h2{
+    text-align: start !important;
+}
+.aboutCard .card:hover{
+    border: none;
+    transform: none;
+}
+.newProject{
+    background-image: url('../Images/circle-scatter-haikei.svg');
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 80px;
+}
+.newProject .left{
+    width: 70%;
+    gap: 20px;
+    color: #fff;
+}
+.newProject .left h4{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+}
+.newProject .right{
+    width: 30%;
+}
+.right button , .packages .card button{
+    background: var(--secondColor);
+    padding: 20px 25px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    transform: translateY(0);
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+.right button::after , .packages .card button::after{
+    content: 'Check new project--';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.right button:hover::after , .packages .card button:hover::after{
+    opacity: 1;
+    transform: translateY(0);
+}
+.right button span , .packages .card button span{
+    position: relative;
+    transform: translateY(0);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 1;
+}
+.right button:hover span , .packages .card button:hover span{
+    transform: translateY(100%);
+    opacity: 0;
+}
+.right button:not(:hover) span , .packages .card button:not(:hover) span{
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform: translateY(0);
+    opacity: 1;
+}
+.right button:not(:hover)::after , .packages .card button:not(:hover)::after{
+    transition: transform 0.4s ease, opacity 0.4 ease;
+}
+.backgroundImageContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.background-image {
+    width: 80% !important;
+    height: 100% !important;
+    object-fit: cover;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+.openVideoButton {
+    position: relative;
+    bottom: 150px;
+    left: 200px;
+    padding: 35px 30px 35px 100px;
+    background-color: #00000067;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+span.icon{
+    font-size: 26px !important;
+    padding: 35px;
+    border-radius: 50%;
+    background: var(--secondColor);
+    position: absolute;
+    right: 66%;
+    top: 0;
+    transition: all 0.4s ease;
+}
+span.icon:hover{
+    transform: scale(1.1);
+}
+.videoPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.videoPopupContent {
+    position: relative;
+}
+.closeButton {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    color: var(--primaryColor);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    background: none !important;
+}
+.aboutCard .card:hover{
+    box-shadow: none !important;
+}
+@media screen and (max-width : 1200px){
+    .aboutContent{
+        flex-direction: column;
+    }
+    .aboutContent .topLeft , .aboutContent .topRight{
+        width: 100%;
+    }
+    .openVideoButton{
+        padding: 25px 20px 25px 90px;
+        font-size: 18px;
+    }
+    span.icon{
+        padding: 25px;
+        right: 70%;
+    }
+    .aboutCard{
+        flex-direction: column;
+    }
+    .newProject{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .newProject .left h2{
+        font-size: 30px;
+    }
+    .newProject .left , .newProject .right{
+        width: 100%;
+    }
+}
+@media screen and (max-width : 780px){
+    .openVideoButton{
+        left: 0px;
+        bottom: 0px;
+    }
+    h2{
+        font-size: 20px !important;
+    }
+    .topRight p{
+        font-size: 12px;
+    }
+    .topLeft , .topRight{
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    .topLeft img{
+        width: 60%;
+        height: 60%;
+    }
+    .count{
+        gap: 25px;
+        padding: 0;
+        align-items: start;
+        width: 100%;
+    }
+    .oval{
+        margin-bottom: 5px;
+        padding: 5px 10px;
+        font-size: 12px;
+        width: 70px;
+    }
+    .count > div , .newProject h4 , .right button span{
+        font-size: 10px !important;
+    }
+    .aboutCard , .newProject{
+        padding: 30px;
+    }
+    .aboutCard .card img{
+        width: 40px;
+        height: 40px;
+    }
+    .aboutCard .content h2 , .newProject h2{
+        font-size: 14px !important;
+    }
+    .aboutCard .card .content{
+        gap: 10px !important;
+    }
+    .aboutCard .content p{
+        font-size: 10px;
+    }
+    .right button{
+        padding: 10px 30px;
+    }
+}

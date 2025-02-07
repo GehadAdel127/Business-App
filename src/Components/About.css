@@ -1,0 +1,111 @@
+.aboutHome{
+    background-color: #55c48b33;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 50px;
+}
+.leftSide{
+    width: 40%;
+}
+.rightSide{
+    width: 50%;
+    padding: 20px;
+    gap: 30px;
+}
+.rightSideIcon , .heading{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: #01849f;
+    text-transform: uppercase;
+    padding: 100px 20px 20px 0px;
+    gap: 10px;
+}
+.rightSideIcon img{
+    width: 100px;
+}
+.headAdd{
+    padding: 20px 0px;
+    line-height: 1;
+}
+.headAdd h2{
+    font-size: 40px;
+    font-weight: 700;
+}
+.headAdd p{
+    font-size: 20px;
+    font-weight: 400;
+    color: #9c9c9c;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+.icons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 10px;
+}
+.rightSide svg{
+    padding: 20px;
+    border-radius: 50%;
+    background-color: #55c48b;
+    color: #fff;
+    transition: all 0.4s ease;
+}
+.icons .icon{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    width: 40%;
+}
+.icon svg{
+    width: 30px;
+    height: 30px;
+}
+.iconContent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.icons .icon h2{
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+.icons .icon p{
+    color: #9c9c9c !important;
+}
+.icon:hover svg{
+    background-color: #01849f;
+    transform: scale(1.1);
+}
+.icon:hover .iconContent h2{
+    color: #01849f;
+}
+@media screen and (max-width : 1200px) {
+    .aboutHome{
+        flex-direction: column-reverse;
+        padding: 50px;
+    }
+    .aboutHome .leftSide , .aboutHome .rightSide{
+        width: 100%;
+    }
+}
+@media screen and (max-width : 780px){
+    .icons .icon{
+        width: 100%;
+    }
+    .aboutHome{
+        padding: 20px;
+    }
+    .aboutHome .leftSide img{
+        width: 100%;
+    }
+}

@@ -1,0 +1,160 @@
+.cartTable {
+    width: 100%;
+    margin-top: 20px;
+    padding: 0px 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #f4f4f4;
+}
+.cartItemImage {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+.quantityControls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+.quantityControls button{
+    padding: 10px;
+    background: var(--btnColors);
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 600;
+    cursor: pointer;
+}
+.quantityControls > span {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 50%;
+}
+.removeItemButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.removeItemButton:hover {
+    background-color: #d32f2f;
+}
+.totalAndInterested{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    padding: 20px;
+}
+.interested{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 46%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f4f4f4;
+}
+.totalAndInterested .head{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cartTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 50%;
+    padding-bottom: 20px;
+    background: #f4f4f4;
+}
+.cartTotal .total{
+    width: 90%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.cartTotal .total > div{
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 10px;
+}
+.cartTotal .total > div h5{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.totalAndInterested .head{
+    border-bottom: 1px solid #ddd;
+}
+.totalAndInterested .head h3{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primaryColor);
+}
+.cartTotal .btn{
+    width: 100%;
+}
+.checkoutButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.checkoutButton:hover {
+    background-color: #45a049;
+}
+.totalAndInterested .productCards{
+    width: 90%;
+}
+.totalAndInterested .productCards .productCard{
+    width: 46%;
+    margin: 0;
+}
+@media screen and (max-width : 780px){
+    .totalAndInterested{
+        flex-direction: column;
+    }
+    .interested , .cartTotal{
+        width: 100%;
+    }
+    table th , table td{
+        font-size: 8px;
+        padding: 5px;
+    }
+    .quantityControls  span , .removeItemButton span{
+        font-size: 10px !important;
+    }
+    .productCard h3{
+        font-size: 12px;
+    }
+}

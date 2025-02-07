@@ -1,0 +1,124 @@
+.productCards{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin: 50px 20px;
+}
+.productCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: transparent;
+    width: 31.5%;
+    gap: 30px;
+    position: relative;
+    cursor: pointer;
+    margin: 20px 0px;
+    color: #000;
+}
+.productCard img{
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid var(--primaryColor);
+    border-radius: 5px;
+}
+.productCard .btn{
+    width: 100%;
+}
+.productCard .price{
+    position: absolute;
+    background: var(--primaryColor);
+    border-radius: 5px;
+    padding: 15px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+.price .priceWithDiscount{
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff8f;
+    text-decoration: line-through;
+}
+.productCard .discount{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px 25px;
+    border-radius: 5px;
+    background: #55c48b2d;
+    color: var(--secondColor);
+    font-size: 20px;
+    font-weight: 600;
+}
+.productCard .react{
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    background: var(--secondColor);
+    color: #fff;
+    padding: 5px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.3s ease , opacity 0.4s ease;
+}
+.productCard:hover .react{
+    opacity: 1;
+    transform: translateY(0);
+}
+.react span{
+    font-size: 22px !important;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+.react span:hover{
+    background: var(--primaryColor);
+}
+.productCard .close{
+    position: absolute;
+    top: -25px;
+    right: -10px;
+    padding: 10px;
+    background: #f44336;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+}
+@media screen and (max-width : 1200px) {
+    .productCards{
+        margin: 50px 0px;
+        justify-content: center;
+    }
+    .productCard{
+        width: 30%;
+    }
+    .price , .discount{
+        font-size: 14px !important;
+        font-weight: 500 !important;
+    }
+}
+@media screen and (max-width : 780px){
+    .productCard{
+        width: 48%;
+        margin: 0;
+    }
+    .productCard .discount , .productCard .price{
+        padding: 10px;
+    }
+}
