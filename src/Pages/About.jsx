@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import HelloImage from '../Components/HelloImage';
 import Test from '../Components/Test';
 import about2 from '../Images/about (1).jpg';
@@ -12,22 +13,21 @@ import './About.css';
 
 const About = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const openVideo = () => setIsVideoOpen(true);
-  const closeVideo = () => setIsVideoOpen(false);
   const [imageOffset, setImageOffset] = useState(0);
+  const numberRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [years, setYears] = useState(0);
+  const [members, setMembers] = useState(0);
+  const [customers, setCustomers] = useState(0);
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setImageOffset(scrollY * 0.01);
+      requestAnimationFrame(() => {
+        setImageOffset(window.scrollY * 0.01);
+      });
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  const [years, setYears] = useState(0);
-  const [members, setMembers] = useState(0);
-  const [customers, setCustomers] = useState(0);
-  const numberRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -40,12 +40,10 @@ const About = () => {
     );
     const numberElement = numberRef.current;
     if (numberElement) observer.observe(numberElement);
-
     return () => {
       if (numberElement) observer.unobserve(numberElement);
     };
   }, [isVisible]);
-
   const animateNumbers = () => {
     const duration = 1500;
     const startTime = performance.now();
@@ -56,19 +54,30 @@ const About = () => {
       setYears(Math.floor(progress * targetValues.years));
       setMembers(Math.floor(progress * targetValues.members));
       setCustomers(Math.floor(progress * targetValues.customers));
-      if (progress < 1) {
-        requestAnimationFrame(updateNumbers);
-      }
+      if (progress < 1) requestAnimationFrame(updateNumbers);
     };
     requestAnimationFrame(updateNumbers);
   };
+  const handleCloseVideo = useCallback((e) => {
+    if (e.key === 'Escape' || e.target.classList.contains('videoOverlay')) {
+      setIsVideoOpen(false);
+    }
+  }, []);
+  useEffect(() => {
+    if (isVideoOpen) {
+      document.addEventListener('keydown', handleCloseVideo);
+    } else {
+      document.removeEventListener('keydown', handleCloseVideo);
+    }
+    return () => document.removeEventListener('keydown', handleCloseVideo);
+  }, [isVideoOpen, handleCloseVideo]);
 
   return (
     <div className='about'>
       <HelloImage text='About' />
       <div className="aboutContent">
         <div className="topRight">
-          <img src={icon} alt=""/>
+          <LazyLoadImage src={icon} alt="Company Icon" effect="blur" />
           <h5>ABOUT OUR COMPANY</h5>
           <h2>We are a team of expert people with creative ideas</h2>
           <p>
@@ -91,34 +100,35 @@ const About = () => {
           </div>
         </div>
         <div className="topLeft">
-          <img
+          <LazyLoadImage
             src={illustration}
-            alt=""
+            alt="Illustration"
+            effect="blur"
             style={{
               transform: `translateY(${imageOffset}px)`,
-              transition: "transform 0.3s ease-out"
+              transition: "transform 0.3s ease-out",
             }}
           />
         </div>
       </div>
       <div className="projects">
-        <img src={presentation} alt="" />
+        <LazyLoadImage src={presentation} alt="Projects" effect="blur" />
         <h5>PROJECTS WE DONE</h5>
         <h2>Our recent creative projects</h2>
         <h4>Let’s check some of our perfect projects.</h4>
         {!isVideoOpen && (
           <div className="backgroundImageContainer">
-            <img src={about2} alt="Background" className="background-image" />
-            <button className="openVideoButton" onClick={openVideo}>
+            <LazyLoadImage src={about2} alt="Project Background" effect="blur" className="background-image" />
+            <button className="openVideoButton" onClick={() => setIsVideoOpen(true)}>
               <span className="material-icons-outlined icon">play_arrow</span>
               Watch Our Video
             </button>
           </div>
         )}
         {isVideoOpen && (
-          <div className="videoPopup">
+          <div className="videoOverlay" onClick={handleCloseVideo}>
             <div className="videoPopupContent">
-              <button className="closeButton" onClick={closeVideo}>X</button>
+              <button className="closeButton" onClick={() => setIsVideoOpen(false)}>X</button>
               <iframe
                 width="560"
                 height="315"
@@ -132,21 +142,21 @@ const About = () => {
         )}
         <div className="aboutCard">
           <div className="card">
-            <img src={smartPhone} alt="smartPhone" />
+            <LazyLoadImage src={smartPhone} alt="Conversations" effect="blur" />
             <div className="content">
               <h2>Conversations</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </div>
           <div className="card">
-            <img src={user} alt="smartPhone" />
+            <LazyLoadImage src={user} alt="Creative Ideas" effect="blur" />
             <div className="content">
               <h2>Creative Ideas</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </div>
           <div className="card">
-            <img src={like} alt="smartPhone" />
+            <LazyLoadImage src={like} alt="Make it Possible" effect="blur" />
             <div className="content">
               <h2>Make it Possible!</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>

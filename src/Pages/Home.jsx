@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 import About from '../Components/About';
 import AboutCompany from '../Components/AboutCompany';
@@ -11,46 +12,43 @@ import './Home.css';
 
 const Home = () => {
     const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
-
-    const handleMouseMove = (e) => {
-        const { clientX, clientY } = e; // Get mouse position
-        const { left, top, width, height } = e.currentTarget.getBoundingClientRect(); // Get image position and size
-
-        // Calculate the relative position of the mouse within the image
-        const x = (clientX - left) / width - 0.5; // Normalize to [-0.5, 0.5]
-        const y = (clientY - top) / height - 0.5; // Normalize to [-0.5, 0.5]
-
-        // Move the image in the opposite direction of the mouse
-        setImagePosition({ x: -x * 10, y: -y * 10 }); // Adjust multiplier for sensitivity
-    };
-
-    const handleMouseLeave = () => {
-        // Reset the image position when the mouse leaves
+    const handleMouseMove = useCallback((e) => {
+        requestAnimationFrame(() => {
+            const { clientX, clientY } = e;
+            const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+            const x = (clientX - left) / width - 0.5;
+            const y = (clientY - top) / height - 0.5;
+            setImagePosition({ x: -x * 10, y: -y * 10 });
+        });
+    }, []);
+    const handleMouseLeave = useCallback(() => {
         setImagePosition({ x: 0, y: 0 });
-    };
+    }, []);
 
     return (
         <div className='home'>
             <div className="mainContent">
                 <div className="right">
-                    <img
+                    <LazyLoadImage
                         src={homeImage}
-                        alt="HomeImage"
+                        alt="Illustration of our services"
+                        effect="blur"
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
                         style={{
                             transform: `translate(${imagePosition.x}px, ${imagePosition.y}px)`,
-                            transition: 'transform 0.1s ease-out', // Smooth transition
+                            transition: 'transform 0.1s ease-out',
                         }}
                     />
                 </div>
                 <div className="left">
-                    <h5>we are expert team</h5>
-                    <h2>We create products that makes people's <span>lives </span>
-                        easier & better.</h2>
+                    <h5>We are an expert team</h5>
+                    <h2>
+                        We create products that make people's <span>lives</span> easier & better.
+                    </h2>
                     <div className="btn">
                         <button>How it works?</button>
-                        <Link to='/about'>Read the full story line</Link>
+                        <Link to='/about'>Read the full story</Link>
                     </div>
                 </div>
             </div>

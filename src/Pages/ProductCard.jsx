@@ -1,21 +1,20 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import './ProductPage.css';
 
 const ProductCard = ({ product, toggleWishlist, isInWishlist, addToCart }) => {
-    const calculateFinalPrice = (packageItem) => {
-        return (packageItem.price - (packageItem.discount * packageItem.price) / 100).toFixed(2);
-    };
-    const navigate = useNavigate();
+    const calculateFinalPrice = useCallback(
+        (packageItem) => (packageItem.price - (packageItem.discount * packageItem.price) / 100).toFixed(2),
+        []
+    );
 
     const handleFavoriteClick = (e) => {
         e.preventDefault();
-        toggleWishlist(product);
-        navigate('/wishlist');
+        toggleWishlist(product); // ✅ Removed navigation to wishlist
     };
 
     return (
-        <div className="productCard" key={product.id}>
+        <div className="productCard">
             <Link to={`/product/${product.id}`}>
                 <img src={product.image} alt={product.name} />
             </Link>
@@ -32,10 +31,7 @@ const ProductCard = ({ product, toggleWishlist, isInWishlist, addToCart }) => {
                 <span
                     className="material-icons-outlined"
                     onClick={handleFavoriteClick}
-                    style={{
-                        color: isInWishlist ? 'white' : 'white',
-                        cursor: 'pointer',
-                    }}
+                    style={{ color: isInWishlist ? 'white' : 'white', cursor: 'pointer' }}
                 >
                     {isInWishlist ? 'favorite' : 'favorite_border'}
                 </span>
