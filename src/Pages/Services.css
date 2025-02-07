@@ -90,6 +90,11 @@
 .packages .card button::after{
     content: 'Good Choice';
 }
+.packages .subCards{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 30px;
+}
 @media screen and (max-width : 1200px) {
     .packages .subCards{
         display: grid;
