@@ -243,10 +243,13 @@ span.icon:hover{
 .videoPopupContent {
     position: relative;
 }
+.videoPopupContent iframe{
+    width: 100%;
+}
 .closeButton {
     position: absolute;
     top: -50px;
-    right: -50px;
+    right: 0px;
     color: var(--primaryColor);
     border: none;
     border-radius: 50%;

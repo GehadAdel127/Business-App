@@ -94,7 +94,7 @@
     .packages .subCards{
         display: grid;
         grid-template-columns: repeat(2 , 1fr);
-        gap: 10px;
+        gap: 30px;
     }
     .careMessage{
         padding: 50px 30px;

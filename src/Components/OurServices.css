@@ -90,7 +90,13 @@
     .cards{
         grid-template-columns: 1fr;
     }
+    .mainCard h2{
+        font-size: 22px !important;
+    }
     .ourServices{
         padding: 20px;
+    }
+    .cards{
+        gap: 30px;
     }
 }

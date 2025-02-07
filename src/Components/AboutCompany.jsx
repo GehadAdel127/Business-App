@@ -9,8 +9,8 @@ const AboutCompany = ({ image }) => {
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-            const direction = currentScrollY > prevScrollY ? 0.5 : -0.5;
-            setImageOffset((prev) => prev + direction * 1.2);
+            const direction = currentScrollY > prevScrollY ? 0.1 : -0.1;
+            setImageOffset((prev) => prev + direction * 0.1);
             setPrevScrollY(currentScrollY);
         };
 

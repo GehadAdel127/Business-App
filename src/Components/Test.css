@@ -151,7 +151,7 @@
     width: auto;
     height: auto;
     top: -50px;
-    left: 30%;
+    left: -12px;
     transform: translateY(50px);
     background: var(--primaryColor);
     color: #fff;
@@ -295,6 +295,9 @@
     }
     .reviewCard.fade-in{
         width: 100%;
+    }
+    .test .logo::before{
+        font-size: 10px !important;
     }
     .test .left {
         padding-left: 20px !important;
