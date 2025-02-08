@@ -195,7 +195,7 @@ header .btn{
 }
 @media screen and (max-width : 1200px){
     header{
-        padding: 20px 30px;
+        padding: 20px;
     }
     header .logo{
         width: 20%;
@@ -242,6 +242,7 @@ header .btn{
         border-radius: 0px;
         width: 100%;
         position: relative;
+        padding-right: 5px;
     }
     header .links{
         position: absolute;
