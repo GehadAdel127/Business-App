@@ -18,6 +18,7 @@ const BlogRightSide = ({ search, setSearch }) => {
                     placeholder="Search blog..."
                     value={search}
                     className="searchBar"
+                    onChange={handleSearch}
                 />
                 <div className="btn" onClick={handleSearch}><button>Search</button></div>
             </div>
