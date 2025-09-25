@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import About from '../Components/About';
 import AboutCompany from '../Components/AboutCompany';
@@ -9,17 +8,17 @@ import about from '../Images/about.jpg';
 import './Home.css';
 
 const Home = () => {
-    const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
-    const handleMouseMove = (e) => {
-        const { clientX, clientY } = e;
-        const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
-        const x = (clientX - left) / width - 0.5;
-        const y = (clientY - top) / height - 0.5;
-        setImagePosition({ x: -x * 10, y: -y * 10 });
-    };
-    const handleMouseLeave = () => {
-        setImagePosition({ x: 0, y: 0 });
-    };
+    // const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
+    // const handleMouseMove = (e) => {
+    //     const { clientX, clientY } = e;
+    //     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    //     const x = (clientX - left) / width - 0.5;
+    //     const y = (clientY - top) / height - 0.5;
+    //     setImagePosition({ x: -x * 10, y: -y * 10 });
+    // };
+    // const handleMouseLeave = () => {
+    //     setImagePosition({ x: 0, y: 0 });
+    // };
     return (
         <div className='home'>
             <div className="mainContent">
