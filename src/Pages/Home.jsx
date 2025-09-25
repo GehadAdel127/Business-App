@@ -34,14 +34,12 @@ const Home = () => {
                         }}
                     />
                 </div> */}
-                <div className="left">
-                    <h5>we are expert team</h5>
-                    <h2>We create products that makes people's <span>lives </span>
-                        easier & better.</h2>
-                    <div className="btn">
-                        <button>How it works?</button>
-                        <Link to='/about'>Read the full story line</Link>
-                    </div>
+                <h5>we are expert team</h5>
+                <h2>We create products that makes people's <span>lives </span>
+                    easier & better.</h2>
+                <div className="btn">
+                    <button>How it works?</button>
+                    <Link to='/about'>Read the full story line</Link>
                 </div>
             </div>
             <OurServices />
