@@ -134,7 +134,7 @@
 }
 
 @media screen and (max-width : 520px) {
-    .mainContent {
+    .home .mainContent {
         width: 100%;
         justify-content: space-between;
         margin-top: 0px;
