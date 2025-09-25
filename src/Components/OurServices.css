@@ -1,21 +1,24 @@
-.ourServices{
+.ourServices {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 60px;
 }
+
 .cards {
     display: grid;
-    grid-template-columns: repeat(4 , 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     align-items: center;
     gap: 20px;
 }
-.subCards{
+
+.subCards {
     display: contents;
 }
-.mainCard{
+
+.mainCard {
     padding: 80px 50px;
     background: linear-gradient(0deg, #01849f, #55c48b);
     color: #fff;
@@ -27,7 +30,8 @@
     gap: 15px;
     line-height: 40px;
 }
-.mainCard h5{
+
+.mainCard h5 {
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 3px;
@@ -35,14 +39,16 @@
     width: 100%;
     text-transform: uppercase;
 }
-.mainCard h2{
+
+.mainCard h2 {
     font-size: 30px !important;
     font-weight: 600 !important;
     color: #fff;
     text-align: start;
     width: 100%;
 }
-.card{
+
+.card {
     display: flex;
     justify-content: start;
     align-items: start;
@@ -55,48 +61,63 @@
     border: 1px solid transparent;
     transition: all 0.4s ease;
 }
-.card h2{
+
+.card h2 {
     font-size: 24px !important;
     font-weight: 700 !important;
 }
-.card p{
+
+.card p {
     font-size: 16px;
     line-height: 25px;
     color: var(--linksColor);
     width: 90%;
 }
-.card img{
+
+.card img {
     width: 60px;
     height: 60px;
     transition: all 0.4s ease;
 }
-.card:hover{
+
+.card:hover {
     transform: translateY(-20px);
     border: 1px solid var(--primaryColor);
     box-shadow: 0px 10px 20px #04879e44;
 }
-.card:hover img{
-    transform :rotateY(360deg);
+
+.card:hover img {
+    transform: rotateY(360deg);
 }
+
 @media screen and (max-width : 1200px) {
-    .cards{
-        grid-template-columns: repeat(2 , 1fr);
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .card h2{
+
+    .card h2 {
         font-size: 20px !important;
     }
 }
+
 @media screen and (max-width : 650px) {
-    .cards{
+    .cards {
         grid-template-columns: 1fr;
     }
-    .mainCard h2{
+
+    .mainCard {
+        padding: 50px;
+    }
+
+    .mainCard h2 {
         font-size: 22px !important;
     }
-    .ourServices{
+
+    .ourServices {
         padding: 20px;
     }
-    .cards{
+
+    .cards {
         gap: 30px;
     }
 }

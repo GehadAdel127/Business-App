@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import About from '../Components/About';
 import AboutCompany from '../Components/AboutCompany';
@@ -6,7 +6,6 @@ import OurServices from '../Components/OurServices';
 import RecentProjects from '../Components/RecentProjects';
 import Test from '../Components/Test';
 import about from '../Images/about.jpg';
-import homeImage from '../Images/slider-layer-1.png';
 import './Home.css';
 
 const Home = () => {
@@ -24,7 +23,7 @@ const Home = () => {
     return (
         <div className='home'>
             <div className="mainContent">
-                <div className="right">
+                {/* <div className="right">
                     <img
                         src={homeImage}
                         alt="HomeImage"
@@ -35,7 +34,7 @@ const Home = () => {
                             transition: 'transform 0.1s ease-out',
                         }}
                     />
-                </div>
+                </div> */}
                 <div className="left">
                     <h5>we are expert team</h5>
                     <h2>We create products that makes people's <span>lives </span>
