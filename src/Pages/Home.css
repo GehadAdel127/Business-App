@@ -81,13 +81,8 @@
         align-items: start;
     }
 
-    .mainContent .right {
-        width: 60%;
-    }
-
     .mainContent .left {
         margin-top: 0px;
-        width: 40%;
         padding-top: 250px;
         gap: 10px !important;
     }
@@ -151,19 +146,9 @@
         justify-content: space-between;
     }
 
-    .home .right {
-        width: 40%;
-    }
-
-    .home .right img,
-    .home .right {
-        height: 25vh;
-    }
-
     .home .left {
         padding: 50px 0px;
         padding-left: 25px;
-        width: 60%;
     }
 
     .mainContent .left .btn button {
