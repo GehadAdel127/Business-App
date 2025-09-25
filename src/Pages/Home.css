@@ -137,6 +137,7 @@
     .mainContent {
         width: 100%;
         justify-content: space-between;
+        margin-top: 0px;
     }
 
     .home .mainContent {
